@@ -1,114 +1,59 @@
+import 'package:cracha_pbsoft/cracha_TCE.dart';
+import 'package:cracha_pbsoft/cracha_pbsoft.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: MyHome());
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  // This widget is the root of your application.
+class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    const title = 'Lista de crachás';
+
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
+      appBar: AppBar(
+        title: const Text(title),
+        backgroundColor: Colors.teal,
+      ),
+      body: GridView.count(
+        crossAxisCount: 2,
         children: [
           Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 2.0,
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.height /
-                      2.0, //Altura do container escuro
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      top: BorderSide(
-                        color: Colors.deepOrange,
-                        width: 4.0,
-                      ),
-                    ),
-                    color: Color.fromARGB(255, 10, 51, 71),
+            child: TextButton(
+              style: ButtonStyle(
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CrachaPbsoft(),
                   ),
-                  child: Container(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 100),
-                      child: Column(children: const [
-                        Padding(
-                          padding: EdgeInsets.all(1.0),
-                          child: Text(
-                            'Samuel Fernandes',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(2.0),
-                          child: Text(
-                            'ANALISTA DE SISTEMAS',
-                            style: TextStyle(
-                                color: Colors.deepOrange, fontSize: 13),
-                          ),
-                        ),
-                      ]),
-                    ),
-                  ),
-                ),
-              ],
+                );
+              },
+              child: const Text('Crachá Pbsoft'),
             ),
           ),
-          //imagens
           Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 6.5,
-                ),
-                //logo
-                Container(
-                  alignment: Alignment.center,
-                  child: const Image(
-                    image: AssetImage('imagens/logo.png'),
+            child: TextButton(
+              style: ButtonStyle(
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CrachaTce(),
                   ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 15.5,
-                ),
-                //foto
-                Container(
-                  alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.height / 3,
-                  width: MediaQuery.of(context).size.height / 3.5,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                      color: Colors.deepOrange,
-                      width: 1.0,
-                    ),
-                  ),
-                  // child: const Image(
-                  //   image: AssetImage('imagens/foto.png'),
-                  // ),
-                ),
-              ],
+                );
+              },
+              child: const Text('Crachá TCE'),
             ),
           ),
         ],
