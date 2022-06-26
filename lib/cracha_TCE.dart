@@ -30,7 +30,7 @@ class _CrachaTcePageState extends State<CrachaTcePage> {
           children: [
             Center(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   // SizedBox(
                   //   height: MediaQuery.of(context).size.height / 2.0,
@@ -75,14 +75,13 @@ class _CrachaTcePageState extends State<CrachaTcePage> {
                             ),
                             const SizedBox(height: 30),
                             Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
                                     children: const [
                                       Text(
                                         'Data de Nascimento',
+                                        textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold,
