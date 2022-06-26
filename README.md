@@ -3,5 +3,5 @@
 Projeto desenvolvido em Flutter.
 
 <p align="center">
-  <img src="https://github.com/samuelfer/cartao_visita_flutter/blob/master/screenshot/screenshot2.png" width="350" title="app cartão visita">
+  <img src=https://github.com/samuelfer/cracha_pbsoft/blob/master/cracha.jpeg" width="350" title="cracha">
 </p>
